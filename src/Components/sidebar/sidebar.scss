@@ -1,9 +1,26 @@
-.sidebar__container{
-    width: 100px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // justify-content: center;
-    border: 1px solid;
+.sidebar__container {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  padding: 1.5rem 0;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  border: 1px solid;
+
+  .sidebar__btn,.sidebar__profile {
+    margin: 0.5rem 0;
+    background: #1a1e1f;
+    border-radius: 32px;
+    padding: 1rem;
+  }
+}
+.sidebarbutton{
+    margin: 0.5rem 0;
+}
+.sidebarbutton{
+    color:#EFEEE0;
+}
+.sidebarbutton.active{
+    color: orange!important;
 }
