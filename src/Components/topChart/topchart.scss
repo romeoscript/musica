@@ -1,4 +1,61 @@
-.top__chart-flex{
-    flex: 1;
-    padding: 1rem;
+.top__chart-flex {
+  flex: 1;
+  padding: 1rem;
+  .top__chart-flex {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.top__chart-flex__top {
+  display: flex;
+  justify-content: space-between;
+  background: #1a1e1f;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  .top__chart-text {
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 63px;
+      height: 63px;
+      background: #d9d9d9;
+      border-radius: 10px;
+    }
+    // nesting topcharttext
+    div {
+      margin: 0 1rem;
+      h3 {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 120%;
+        color: #ffffff;
+      }
+      span {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 120%;
+        margin: 0.5rem 0;
+        display: block;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 120%;
+        color: #ffffff;
+      }
+    }
+  }
+}
+.heart__icon {
+  box-sizing: border-box;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.11);
 }

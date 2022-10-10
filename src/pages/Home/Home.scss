@@ -31,7 +31,42 @@
       justify-content: space-between;
       height: 100%;
       padding: 1rem;
-      width: 50%;
+      width: 49%;
+      h1 {
+        /* Bold/35px */
+        font-family: "Quicksand";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 120%;
+        color: #FFFFFF;
+
+      }
+      // shared container text
+      p {
+        font-family: "Quicksand";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 120%;
+        /* or 17px */
+
+        color: #ffffff;
+      }
+      .shared__container-people-image {
+        display: flex;
+        // justify-content: space-around;
+        align-items: center;
+      }
+      .ptag {
+        margin: 10px;
+        font-family: "Quicksand";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 120%;
+        color: white;
+      }
     }
 
     // shared container human image

@@ -1,6 +1,6 @@
 import React from "react";
 import TopCharts from "../../Components/topChart/TopCharts";
-import { Humanboy, frame,love } from "../../assets";
+import { Humanboy, frame, love } from "../../assets";
 import { motion } from "framer-motion";
 
 const HomePage = () => {
@@ -17,20 +17,26 @@ const HomePage = () => {
                 All mine, Lie again, Petty call me everyday, Out of time, No
                 love, Bad habit, and so much more
               </p>
-             
             </section>
             <div className="shared__container-people-image">
-                <img src={frame} alt="" />
-                <p> <span> <img src={love} alt="" /> </span> 33k Likes</p>
-              </div>
+              <img src={frame} alt="" />
+              <p className="ptag">
+                {" "}
+                <span>
+                  {" "}
+                  <img src={love} alt="" />{" "}
+                </span>{" "}
+                33k Likes
+              </p>
+            </div>
           </div>
           {/* human boy image */}
-          <motion.img 
+          <motion.img
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
             src={Humanboy}
-            className= 'humanbg'
+            className="humanbg"
             alt="humanbg"
           />
         </div>

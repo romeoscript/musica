@@ -9,6 +9,9 @@ import radio from './radio.png'
 import video from './videos.png'
 import frame from './Frame 4.png'
 import love from './Vector.png'
+import Rectangle1 from './Rectangle 17.png'
+import Rectangle from './Rectangle 17 (1).png'
+import Rectangle2 from './yy.png'
 
 
 export {
@@ -22,4 +25,7 @@ export {
   video,
   frame,
   love,
+  Rectangle2,
+  Rectangle,
+  Rectangle1
 };
