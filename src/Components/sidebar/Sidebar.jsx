@@ -27,7 +27,7 @@ const Sidebar = () => {
           to="/"
           icons={
             <Home2
-              size="30"
+              size="20"
               variant="Bold"
             />
           }
@@ -36,7 +36,7 @@ const Sidebar = () => {
           to="/collections"
           icons={
             <MusicLibrary2
-              size="30"
+              size="20"
               variant="Bold"
             />
           }
@@ -45,7 +45,7 @@ const Sidebar = () => {
           to="/player"
           icons={
             <Radio
-              size="30"
+              size="20"
               variant="Bold"
             />
           }
@@ -54,7 +54,7 @@ const Sidebar = () => {
           to="/trending"
           icons={
             <VideoVertical
-              size="30"
+              size="20"
               variant="Bold"
             />
           }
@@ -67,7 +67,7 @@ const Sidebar = () => {
           to="/."
           icons={
             <Profile
-              size="30"
+              size="20"
               variant="Bold"
             />
           }
@@ -76,7 +76,7 @@ const Sidebar = () => {
           to="/."
           icons={
             <LogoutCurve
-              size="30"
+              size="20"
               variant="Bold"
             />
           }

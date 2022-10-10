@@ -7,6 +7,8 @@ import playlist from './playlist.png';
 import Logout from './Logout.png'
 import radio from './radio.png'
 import video from './videos.png'
+import frame from './Frame 4.png'
+import love from './Vector.png'
 
 
 export {
@@ -18,4 +20,6 @@ export {
   playlist,
   radio,
   video,
+  frame,
+  love,
 };

@@ -2,6 +2,43 @@
   height: 100vh;
   width: 100%;
   background-color: #1d2123;
-  // border-radius: 2rem;
   display: flex;
+}
+// shared container flex
+.shared__container-flex {
+  display: flex;
+  gap: 2%;
+  height: 373px;
+  border: 1px solid red;
+  margin: 1rem;
+
+  // shared container flex item
+  .shared__container-flex__item {
+    position: relative;
+    flex: 2;
+    height: 100%;
+    background-color: gold;
+    padding: 1rem;
+    background: #609eaf url("../../assets/Vector.svg") no-repeat right;
+    border-radius: 40px;
+    overflow: hidden;
+
+    // shared container
+
+    .shared__container-flex__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      padding: 1rem;
+      width: 50%;
+    }
+
+    // shared container human image
+    .humanbg {
+      position: absolute;
+      top: 1%;
+      right: 0;
+    }
+  }
 }
