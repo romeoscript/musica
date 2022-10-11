@@ -2,18 +2,23 @@ import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
-import { Rectangle17,Rectangle14, Rectangle15, Rectangle16 } from "../../assets";
-import './newrelease.scss'
+import {
+  Rectangle17,
+  Rectangle14,
+  Rectangle15,
+  Rectangle16,
+} from "../../assets";
+import "./newrelease.scss";
 // Import Swiper styles
 import "swiper/css";
 
 const Newrelease = () => {
   return (
     <div className="swiper__container">
+      <h2>New Releases.</h2>
       <Swiper
-  
         modules={[Autoplay]}
-        spaceBetween={30}
+        spaceBetween={50}
         slidesPerView={7}
         slidesPerGroup={1}
         autoplay={{

@@ -1,15 +1,15 @@
 .top__chart-flex {
   flex: 1;
-  padding: 1rem;
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
   overflow: scroll;
   margin: 0 auto;
 
- &::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     display: none;
   }
-  
+
   h2 {
     font-weight: 700;
     font-size: 24px;
@@ -23,6 +23,7 @@
   background: #1a1e1f;
   border-radius: 20px;
   align-items: center;
+  height: 88px;
   padding: 1rem;
   margin: 0.5rem 0;
   .top__chart-text {

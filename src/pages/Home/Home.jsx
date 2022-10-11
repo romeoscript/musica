@@ -6,6 +6,7 @@ import Collections from "../Collections/Collections";
 import Player from "../player/Player";
 import Trending from "../trending/Trending";
 import Sidebar from "../../Components/sidebar/Sidebar";
+import Cta from "../../Components/cta/Cta";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
           <Route path="/player" element={<Player />} />
           <Route path="/trending" element={<Trending />} />
         </Routes>
+        <Cta />
       </div>
     </BrowserRouter>
   );

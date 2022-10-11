@@ -1,13 +1,18 @@
 .swiper__container {
-   width: 100%!important;
-   margin: 0.5rem;
-
+  width: 100% !important;
+  margin: 0.5rem;
+  h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    color: #efeee0;
+  }
   // slideritem
   .slider__item {
-    width: 153px !important;
+    width: 133px !important;
     img {
       max-width: 100%;
-      height: 153px;
+      height: 133px;
       border-radius: 25px;
     }
     p {
