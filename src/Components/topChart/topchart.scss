@@ -3,6 +3,12 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
+  margin: 0 auto;
+
+ &::-webkit-scrollbar {
+    display: none;
+  }
   
   h2 {
     font-weight: 700;

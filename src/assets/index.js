@@ -11,6 +11,10 @@ import frame from './Frame 4.png'
 import love from './Vector.png'
 import Rectangle1 from './Rectangle 17.png'
 import Rectangle from './Rectangle 17 (1).png'
+import Rectangle14 from './Rectangle 14 (2).png'
+import Rectangle15 from './Rectangle 14 (3).png'
+import Rectangle16 from './Rectangle 14 (4).png'
+import Rectangle17 from './Rectangle 14 (5).png'
 import Rectangle2 from './yy.png'
 
 
@@ -27,5 +31,9 @@ export {
   love,
   Rectangle2,
   Rectangle,
-  Rectangle1
+  Rectangle1,
+  Rectangle14,
+  Rectangle15,
+  Rectangle16,
+  Rectangle17
 };

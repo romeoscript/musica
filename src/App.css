@@ -6,6 +6,9 @@
    margin: 0; 
    font-family: 'Quicksand';
 }
+html{
+    overflow-x: hidden;
+}
 body{
     background: #1D2123;
 }

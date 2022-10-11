@@ -2,6 +2,7 @@ import React from "react";
 import TopCharts from "../../Components/topChart/TopCharts";
 import { Humanboy, frame, love } from "../../assets";
 import { motion } from "framer-motion";
+import Newrelease from "../../Components/newrelease/Newrelease";
 
 const HomePage = () => {
   return (
@@ -42,6 +43,7 @@ const HomePage = () => {
         </div>
         <TopCharts />
       </div>
+      <Newrelease />
     </div>
   );
 };
