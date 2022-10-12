@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./sidebar.scss";
-import {SearchNormal1} from "iconsax-react"
+import { SearchNormal1 } from "iconsax-react";
 import { logo } from "../../assets";
 import {
   MusicLibrary2,
@@ -10,11 +10,27 @@ import {
   Radio,
   Home2,
 } from "iconsax-react";
-
+import { fetchData, musicOptions } from "../../utilities/fetchData";
 import SidebarButton from "./SidebarButton";
 // import {GrHomeRounded} from 'react-icons/gr'
 
 const Sidebar = () => {
+  // the state for the search bar
+  const [search, setSearch] = useState("");
+  const handleSearch = async (e) => {
+    setSearch(e.target.value.toLowerCase());
+    if (search) {
+      const musicData = await fetchData(
+        'https://shazam-core.p.rapidapi.com/v1/charts/world',
+        musicOptions
+      );
+      console.log(musicData[0].images.coverart)
+      // const searchedMusic = musicData.filter((music)=>{
+      //   return music.artiste
+      // })
+    }
+  };
+  // end of the state
   return (
     <div className="sidebar__container">
       {/* logo  */}
@@ -22,8 +38,18 @@ const Sidebar = () => {
         <img src={logo} alt="" />
       </div>
       <div className="input__container">
-      <input type="search" placeholder="search artiste" />
-      <SearchNormal1 size="15" color="#dce775" variant="Outline" className="searchicon"/>
+        <input
+          type="search"
+          placeholder="search artiste"
+          value={search}
+          onChange={handleSearch}
+        />
+        <SearchNormal1
+          size="15"
+          color="#dce775"
+          variant="Outline"
+          className="searchicon"
+        />
       </div>
       {/* the navigation pane and routes */}
       <div className="sidebar__btn">
