@@ -12,7 +12,9 @@ import "./newrelease.scss";
 // Import Swiper styles
 import "swiper/css";
 
-const Newrelease = () => {
+const Newrelease = (props) => {
+
+
   return (
     <div className="swiper__container">
       <h2>New Releases.</h2>
@@ -30,7 +32,8 @@ const Newrelease = () => {
       >
         <SwiperSlide className="slider__item">
           <img src={Rectangle14} alt="" />
-          <p className="swiper__title">Life in a bubble</p>
+          <p className="swiper__title">
+             title</p>
         </SwiperSlide>
         <SwiperSlide className="slider__item">
           <img src={Rectangle15} alt="" />
