@@ -3,68 +3,39 @@ import "./topchart.scss";
 import { Rectangle } from "../../assets";
 import { Heart } from "iconsax-react";
 
-const TopCharts = () => {
+const TopCharts = (props) => {
+  const topChart = props.released;
+
   return (
     <div className="top__chart-flex">
       {/* topcharsection */}
       <h2>Top charts</h2>
       <section className="top__charts">
-
         {/* this information would be fetched from an api */}
-        <div className="top__chart-flex__top">
-          {/* flex__item1 */}
 
-          <div className="top__chart-text">
-            <img src={Rectangle} alt="" />
-            <div className="top__chart-text_content">
-              <h3>Golden age of 80s</h3>
-              <span>Sean swadder</span>
-              <p>2:34:45</p>
+        {/* flex__item1 */}
+        {topChart.map((updated) => {
+          return (
+            <div className="top__chart-flex__top">
+              <div className="top__chart-text">
+                <img src={updated.image} alt="" />
+                <div className="top__chart-text_content">
+                  <h3>{updated.title}</h3>
+                  <span>Sean swadder</span>
+                  <p>2:34:45</p>
+                </div>
+              </div>
+
+              <div className="heart__icon">
+                <Heart size="17" color="#FACD66" variant="Outline" />
+              </div>
             </div>
-          </div>
+          );
+        })}
 
-          {/* flex__item2 */}
-
-          <div className="heart__icon">
-            <Heart size="17" color="#FACD66" variant="Outline" />
-          </div>
-        </div>
-        <div className="top__chart-flex__top">
-          {/* flex__item1 */}
-
-          <div className="top__chart-text">
-            <img src={Rectangle} alt="" />
-            <div className="top__chart-text_content">
-              <h3>Golden age of 80s</h3>
-              <span>Sean swadder</span>
-              <p>2:34:45</p>
-            </div>
-          </div>
-
-          {/* flex__item2 */}
-
-          <div className="heart__icon">
-            <Heart size="17" color="#FACD66" variant="Outline" />
-          </div>
-        </div>
-        <div className="top__chart-flex__top">
-          {/* flex__item1 */}
-
-          <div className="top__chart-text">
-            <img src={Rectangle} alt="" />
-            <div className="top__chart-text_content">
-              <h3>Golden age of 80s</h3>
-              <span>Sean swadder</span>
-              <p>2:34:45</p>
-            </div>
-          </div>
-
-          {/* flex__item2 */}
-
-          <div className="heart__icon">
-            <Heart size="17" color="#FACD66" variant="Outline" />
-          </div>
-        </div>
+       
+        
+       
       </section>
     </div>
   );

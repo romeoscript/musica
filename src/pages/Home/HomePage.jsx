@@ -78,7 +78,7 @@ useEffect(() => {
             alt="humanbg"
           />
         </div>
-        <TopCharts />
+        <TopCharts released={newRelease} />
       </div>
       <Newrelease released={newRelease}/>
     </div>
