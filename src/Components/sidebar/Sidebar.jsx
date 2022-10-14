@@ -25,9 +25,9 @@ const Sidebar = () => {
         musicOptions
       );
       console.log(musicData[0].images.coverart)
-      // const searchedMusic = musicData.filter((music)=>{
-      //   return music.artiste
-      // })
+      const searchedMusic = musicData.filter((music)=>{
+        return music.artiste
+      })
     }
   };
   // end of the state

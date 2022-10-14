@@ -1,11 +1,11 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import TopCharts from "../../Components/topChart/TopCharts";
 import { Humanboy, frame, love } from "../../assets";
 import { motion } from "framer-motion";
 import Newrelease from "../../Components/newrelease/Newrelease";
 
 const HomePage = () => {
-const [newRelease, setNewRelease] = useState('')
+const [newRelease, setNewRelease] = useState([])
 
 function fetchAudio(){
   const options = {
@@ -17,22 +17,29 @@ function fetchAudio(){
   };
   
   fetch('https://shazam-core.p.rapidapi.com/v1/charts/world', options)
-    .then(response => response.json())
-    .then(data => {
+    .then(response  => response.json() )
+   
+    .then(data => { 
+   
       const transformedMovies = data.map(audioData => {
+        console.log(audioData)
         return{
           id:audioData.key,
           title:audioData.title,
           image:audioData.images.coverart,
+          url:audioData.url,
         }
       })
       setNewRelease(transformedMovies)
-      // console.log(transformedMovies)
+      console.log(transformedMovies)
     })
    
     .catch(err => console.error(err));
   
 }
+useEffect(() => {
+  fetchAudio()
+}, [])
 
   return (
     <div className="shared__container">
@@ -43,7 +50,7 @@ function fetchAudio(){
             <p>Currated playlist</p>
             <section>
               <h1>R & B Hits</h1>
-              <button onClick={fetchAudio}>clik</button>
+           
               <p>
                 All mine, Lie again, Petty call me everyday, Out of time, No
                 love, Bad habit, and so much more

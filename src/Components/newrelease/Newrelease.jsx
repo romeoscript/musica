@@ -2,18 +2,15 @@ import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
-import {
-  Rectangle17,
-  Rectangle14,
-  Rectangle15,
-  Rectangle16,
-} from "../../assets";
+
 import "./newrelease.scss";
 // Import Swiper styles
 import "swiper/css";
 
 const Newrelease = (props) => {
-
+  // console.log(props.released.id)
+  const update = props.released;
+  console.log(update)
 
   return (
     <div className="swiper__container">
@@ -27,42 +24,19 @@ const Newrelease = (props) => {
           delay: 1000,
           disableOnInteraction: false,
         }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
       >
-        <SwiperSlide className="slider__item">
-          <img src={Rectangle14} alt="" />
-          <p className="swiper__title">
-             title</p>
-        </SwiperSlide>
-        <SwiperSlide className="slider__item">
-          <img src={Rectangle15} alt="" />
-          <p className="swiper__title">Life in a bubble</p>
-        </SwiperSlide>
-        <SwiperSlide className="slider__item">
-          <img src={Rectangle16} alt="" />
-          <p className="swiper__title">Life in a bubble</p>
-        </SwiperSlide>
-        <SwiperSlide className="slider__item">
-          <img src={Rectangle17} alt="" />
-          <p className="swiper__title">Life in a bubble</p>
-        </SwiperSlide>
-        <SwiperSlide className="slider__item">
-          <img src={Rectangle14} alt="" />
-          <p className="swiper__title">Life in a bubble</p>
-        </SwiperSlide>
-        <SwiperSlide className="slider__item">
-          <img src={Rectangle14} alt="" />
-          <p className="swiper__title">Life in a bubble</p>
-        </SwiperSlide>
-        <SwiperSlide className="slider__item">
-          <img src={Rectangle14} alt="" />
-          <p className="swiper__title">Life in a bubble</p>
-        </SwiperSlide>
-        <SwiperSlide className="slider__item">
-          <img src={Rectangle14} alt="" />
-          <p className="swiper__title">Life in a bubble</p>
-        </SwiperSlide>
+        {update.map((newUpdate) => {
+           const song = new Audio(newUpdate.url)
+           console.log(song)
+          return (
+            <SwiperSlide className="slider__item" key={newUpdate.id} onClick={song.play()}>
+             
+              <img src={newUpdate.image} alt="" />
+              <p className="swiper__title">{newUpdate.title} </p>
+            </SwiperSlide>
+          );
+        })}
+
       </Swiper>
     </div>
   );
