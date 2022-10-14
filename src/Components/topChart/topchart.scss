@@ -3,7 +3,7 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  overflow: scroll;
+  overflow: hidden;
   margin: 0 auto;
 
   &::-webkit-scrollbar {
@@ -23,7 +23,7 @@
   background: #1a1e1f;
   border-radius: 20px;
   align-items: center;
-  height: 88px;
+  height: 108px;
   padding: 1rem;
   margin: 0.5rem 0;
   .top__chart-text {

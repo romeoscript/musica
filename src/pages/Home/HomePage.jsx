@@ -3,6 +3,7 @@ import TopCharts from "../../Components/topChart/TopCharts";
 import { Humanboy, frame, love } from "../../assets";
 import { motion } from "framer-motion";
 import Newrelease from "../../Components/newrelease/Newrelease";
+import Popular from "../../Components/newrelease/Popular";
 
 const HomePage = () => {
 const [newRelease, setNewRelease] = useState([])
@@ -81,6 +82,7 @@ useEffect(() => {
         <TopCharts released={newRelease} />
       </div>
       <Newrelease released={newRelease}/>
+      <Popular released={newRelease}/>
     </div>
   );
 };

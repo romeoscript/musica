@@ -19,7 +19,7 @@ const Home = () => {
           <Route path="/player" element={<Player />} />
           <Route path="/trending" element={<Trending />} />
         </Routes>
-        <Cta />
+        {/* <Cta /> */}
       </div>
     </BrowserRouter>
   );
