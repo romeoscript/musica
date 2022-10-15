@@ -16,22 +16,21 @@ const TopCharts = (props) => {
         {/* flex__item1 */}
         {topChart.map((updated) => {
           return (
-            <Link to={`/player/${updated.id}` }>
-              <div className="top__chart-flex__top" key={updated.id}>
+            <div className="top__chart-flex__top" key={updated.id}>
+              <Link to={`/player/${updated.id}`}>
                 <div className="top__chart-text">
                   <img src={updated.image} alt="" />
                   <div className="top__chart-text_content">
                     <h3>{updated.title}</h3>
-                    <span>Sean swadder</span>
+                    <span>{updated.sub}</span>
                     <p>2:34:45</p>
                   </div>
                 </div>
-
-                <div className="heart__icon">
-                  <Heart size="17" color="#FACD66" variant="Outline" />
-                </div>
+              </Link>
+              <div className="heart__icon">
+                <Heart size="17" color="#FACD66" variant="Outline" />
               </div>
-            </Link>
+            </div>
           );
         })}
       </section>

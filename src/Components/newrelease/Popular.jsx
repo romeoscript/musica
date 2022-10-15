@@ -32,7 +32,7 @@ const Popular = (props) => {
           return (
             <SwiperSlide className="slider__item" key={i} onClick={()=>newUpdate.song.play()}>
              
-              <img src={newUpdate.image} alt="" />
+              <img src={newUpdate.img} alt="" />
               <p className="swiper__title">{newUpdate.title} </p>
             </SwiperSlide>
           );

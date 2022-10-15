@@ -21,17 +21,19 @@ function fetchAudio(){
     }
   };
   
-  fetch('https://api.napster.com/v2.1/tracks/top?apikey=ZTk2YjY4MjMtMDAzYy00MTg4LWE2MjYtZDIzNjJmMmM0YTdm')
+  fetch('https://shazam-core.p.rapidapi.com/v1/charts/world', options)
     .then(response  => response.json() )
    
     .then(data => { 
-      // console.log(data.tracks.albumId)
-      console.log(data.tracks)
-      const transformedMovies = data.tracks.map(audioData => {
+      console.log(data)
+      const transformedMovies = data.map(audioData => {
+        console.log(audioData)
         return{
-          id:audioData.albumId,
-          title:audioData.name,
-          // image:audioData.images.coverart,
+          id:audioData.key,
+          title:audioData.title,
+          sub:audioData.subtitle,
+          image:audioData.images.background,
+          img:audioData.images.coverart,
           url:audioData.previewURL,
         }
       })
