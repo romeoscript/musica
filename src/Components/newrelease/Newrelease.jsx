@@ -29,7 +29,7 @@ const Newrelease = (props) => {
            const song = new Audio(newUpdate.url)
            console.log(song)
           return (
-            <SwiperSlide className="slider__item" key={newUpdate.id} onClick={song.play()}>
+            <SwiperSlide className="slider__item" key={newUpdate.id} onClick={song.play}>
              
               <img src={newUpdate.image} alt="" />
               <p className="swiper__title">{newUpdate.title} </p>

@@ -59,7 +59,7 @@ const Sidebar = () => {
           icons={<MusicLibrary2 size="20" variant="Bold" />}
         />
         <SidebarButton
-          to="/player"
+         
           icons={<Radio size="20" variant="Bold" />}
         />
         <SidebarButton

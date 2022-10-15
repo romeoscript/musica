@@ -1,6 +1,6 @@
 import React from "react";
 import "./topchart.scss";
-import { Rectangle } from "../../assets";
+import { Link } from "react-router-dom";
 import { Heart } from "iconsax-react";
 
 const TopCharts = (props) => {
@@ -16,26 +16,24 @@ const TopCharts = (props) => {
         {/* flex__item1 */}
         {topChart.map((updated) => {
           return (
-            <div className="top__chart-flex__top">
-              <div className="top__chart-text">
-                <img src={updated.image} alt="" />
-                <div className="top__chart-text_content">
-                  <h3>{updated.title}</h3>
-                  <span>Sean swadder</span>
-                  <p>2:34:45</p>
+            <Link to={`/player/${updated.id}` }>
+              <div className="top__chart-flex__top" key={updated.id}>
+                <div className="top__chart-text">
+                  <img src={updated.image} alt="" />
+                  <div className="top__chart-text_content">
+                    <h3>{updated.title}</h3>
+                    <span>Sean swadder</span>
+                    <p>2:34:45</p>
+                  </div>
+                </div>
+
+                <div className="heart__icon">
+                  <Heart size="17" color="#FACD66" variant="Outline" />
                 </div>
               </div>
-
-              <div className="heart__icon">
-                <Heart size="17" color="#FACD66" variant="Outline" />
-              </div>
-            </div>
+            </Link>
           );
         })}
-
-       
-        
-       
       </section>
     </div>
   );

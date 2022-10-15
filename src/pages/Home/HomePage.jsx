@@ -1,46 +1,11 @@
-import React,{useState,useEffect} from "react";
+import React from "react";
 import TopCharts from "../../Components/topChart/TopCharts";
 import { Humanboy, frame, love } from "../../assets";
 import { motion } from "framer-motion";
 import Newrelease from "../../Components/newrelease/Newrelease";
 import Popular from "../../Components/newrelease/Popular";
 
-const HomePage = () => {
-const [newRelease, setNewRelease] = useState([])
-
-function fetchAudio(){
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '2af34e5f2amsh30aa2a4db3d4787p186977jsn1db94398f502',
-      'X-RapidAPI-Host': 'shazam-core.p.rapidapi.com'
-    }
-  };
-  
-  fetch('https://shazam-core.p.rapidapi.com/v1/charts/world', options)
-    .then(response  => response.json() )
-   
-    .then(data => { 
-   
-      const transformedMovies = data.map(audioData => {
-        console.log(audioData)
-        return{
-          id:audioData.key,
-          title:audioData.title,
-          image:audioData.images.coverart,
-          url:audioData.url,
-        }
-      })
-      setNewRelease(transformedMovies)
-      console.log(transformedMovies)
-    })
-   
-    .catch(err => console.error(err));
-  
-}
-useEffect(() => {
-  fetchAudio()
-}, [])
+const HomePage = ({released}) => {
 
   return (
     <div className="shared__container">
@@ -79,10 +44,10 @@ useEffect(() => {
             alt="humanbg"
           />
         </div>
-        <TopCharts released={newRelease} />
+        <TopCharts released={released} />
       </div>
-      <Newrelease released={newRelease}/>
-      <Popular released={newRelease}/>
+      <Newrelease released={released}/>
+      <Popular released={released}/>
     </div>
   );
 };

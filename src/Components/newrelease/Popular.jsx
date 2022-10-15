@@ -21,15 +21,16 @@ const Popular = (props) => {
         slidesPerView={7}
         slidesPerGroup={1}
         autoplay={{
-          delay: 1000,
+          delay: 2000,
           disableOnInteraction: false,
         }}
       >
-        {update.map((newUpdate) => {
-           const song = new Audio(newUpdate.url)
-           console.log(song)
+        {update.map((newUpdate, i) => {
+           newUpdate.song = new Audio(newUpdate.url)
+          
+           
           return (
-            <SwiperSlide className="slider__item" key={newUpdate.id} onClick={song.play()}>
+            <SwiperSlide className="slider__item" key={i} onClick={()=>newUpdate.song.play()}>
              
               <img src={newUpdate.image} alt="" />
               <p className="swiper__title">{newUpdate.title} </p>
