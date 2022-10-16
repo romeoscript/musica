@@ -6,7 +6,8 @@ import Collections from "../Collections/Collections";
 import Player from "../player/Player";
 import Trending from "../trending/Trending";
 import Sidebar from "../../Components/sidebar/Sidebar";
-// import Cta from "../../Components/cta/Cta";
+
+import Cta from "../../Components/cta/Cta";
 
 const Home = () => {
 
@@ -57,7 +58,7 @@ useEffect(() => {
           <Route path="/player/:musicId" element={<Player released={newRelease}/>} />
           <Route path="/trending" element={<Trending />} />
         </Routes>
-        {/* <Cta /> */}
+        <Cta />
       </div>
     </BrowserRouter>
   );

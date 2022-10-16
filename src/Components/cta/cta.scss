@@ -11,3 +11,10 @@
   border: 1px solid rgba(16, 16, 16, 0.51);
   filter: drop-shadow(0px -25px 100px rgba(16, 16, 16, 0.51));
 }
+.rhap_controls-section{
+  display: flex!important;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

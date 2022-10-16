@@ -6,7 +6,6 @@ import "./Player.scss";
 const Player = (props) => {
   const topChart = props.released;
   const params = useParams();
-  console.log(topChart);
   const topPlayed = topChart.find((played) => {
     return played.id === params.musicId;
   });
