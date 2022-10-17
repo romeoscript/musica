@@ -28,14 +28,14 @@ function fetchAudio(){
     .then(data => { 
       console.log(data)
       const transformedMovies = data.map(audioData => {
-        console.log(audioData)
+        console.log(audioData.hub.actions[1].uri)
         return{
           id:audioData.key,
           title:audioData.title,
           sub:audioData.subtitle,
           image:audioData.images.background,
           img:audioData.images.coverart,
-          url:audioData.previewURL,
+          url:audioData.hub.actions[1].uri,
         }
       })
       setNewRelease(transformedMovies)
