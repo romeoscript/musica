@@ -73,7 +73,6 @@
   justify-content: space-between;
   align-items: center;
 
-
   .play,
   .add__collection,
   .heart__section {
@@ -81,7 +80,7 @@
     flex-direction: row;
     align-items: center;
     padding: 10px;
-   color: white;
+    color: white;
     height: 36px;
     flex-basis: 30%;
     background: rgba(255, 255, 255, 0.07);
@@ -89,14 +88,71 @@
     -webkit-backdrop-filter: blur(5px);
     border-radius: 32px;
     flex: none;
-    p{
-        margin:  0 0.5rem   0;
+    p {
+      margin: 0 0.5rem 0;
     }
   }
-  .heart__section{
+  .heart__section {
     border-radius: 50%;
   }
 }
-// .player__image-container img{
-//    width: 100%;
-// }
+.player__album {
+  width: 95%;
+  height: 56px;
+  margin: auto;
+  background: rgba(51, 55, 59, 0.37);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  // .player__album-first{
+  //   flex: 2;
+  //   border: 1px solid red;
+
+  // }
+  .player__album-second {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    line-height: 120%;
+    justify-content: space-between;
+    .album__dp {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    img {
+      width: 39px;
+      height: 39px;
+      margin-right: 1rem;
+    }
+    .more {
+      transform: rotate(90deg);
+    }
+  }
+}
+.my__collections {
+  display: flex;
+  justify-content: flex-start;
+  & div:first-child {
+    padding: 0.5rem 1rem;
+    background: #facd66;
+    border-radius: 27px;
+    margin: 1rem;
+    color: gray;
+    cursor: pointer;
+  }
+  & div:nth-child(2){
+    padding: 0.5rem 1rem;
+    border-radius: 27px;
+    margin: 1rem;
+    border: 1px solid #EFEEE0;
+    opacity: 0.25;
+    color: gray;
+    cursor: pointer;
+  }
+}

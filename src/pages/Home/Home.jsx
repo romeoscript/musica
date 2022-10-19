@@ -1,4 +1,4 @@
-import React,{useState,useEffect}  from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./Home.scss";
 import HomePage from "./HomePage";
@@ -10,52 +10,53 @@ import Sidebar from "../../Components/sidebar/Sidebar";
 import Cta from "../../Components/cta/Cta";
 
 const Home = () => {
+  const [newRelease, setNewRelease] = useState([]);
 
-  const [newRelease, setNewRelease] = useState([])
+  function fetchAudio() {
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "3b68a0e148mshe3db36ded1779fcp119a09jsn4947aa0d4692",
+        "X-RapidAPI-Host": "shazam-core.p.rapidapi.com",
+      },
+    };
 
-function fetchAudio(){
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '2af34e5f2amsh30aa2a4db3d4787p186977jsn1db94398f502',
-      'X-RapidAPI-Host': 'shazam-core.p.rapidapi.com'
-    }
-  };
-  
-  fetch('https://shazam-core.p.rapidapi.com/v1/charts/world', options)
-    .then(response  => response.json() )
-   
-    .then(data => { 
-      console.log(data)
-      const transformedMovies = data.map(audioData => {
-        console.log(audioData.hub.actions[1].uri)
-        return{
-          id:audioData.key,
-          title:audioData.title,
-          sub:audioData.subtitle,
-          image:audioData.images.background,
-          img:audioData.images.coverart,
-          url:audioData.hub.actions[1].uri,
-        }
+    fetch("https://shazam-core.p.rapidapi.com/v1/charts/world", options)
+      .then((response) => response.json())
+
+      .then((data) => {
+        console.log(data);
+        const transformedMovies = data.map((audioData) => {
+          console.log(audioData.images.background);
+          return {
+            id: audioData.key,
+            title: audioData.title,
+            sub: audioData.subtitle,
+            // image:audioData.images.coverart,
+            // img:audioData.images.coverart,
+            //  url:audioData.hub.actions[1].uri,
+          };
+        });
+        setNewRelease(transformedMovies);
+        console.log(transformedMovies);
       })
-      setNewRelease(transformedMovies)
-      console.log(transformedMovies)
-    })
-   
-    .catch(err => console.error(err));
-  
-}
-useEffect(() => {
-  fetchAudio()
-}, [])
+      .catch((err) => console.error(err));
+  }
+  useEffect(() => {
+    fetchAudio();
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="main__body">
         <Sidebar />
         <Routes>
-          <Route path="/" element={<HomePage released={newRelease}/>} />
+          <Route path="/" element={<HomePage released={newRelease} />} />
           <Route path="/collections" element={<Collections />} />
-          <Route path="/player/:musicId" element={<Player released={newRelease}/>} />
+          <Route
+            path="/player/:musicId"
+            element={<Player released={newRelease} />}
+          />
           <Route path="/trending" element={<Trending />} />
         </Routes>
         <Cta />

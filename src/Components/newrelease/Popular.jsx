@@ -10,16 +10,6 @@ import "swiper/css";
 const Popular = (props) => {
   // console.log(props.released.id)
   const update = props.released;
-  console.log(update)
-  // const playSong = ()=>{
-  //   update.forEach(element => {
-  //     element.song = new Audio(element.url)
-  //     console.log(element.Audio)
-  //     element.song.play()
-  //   });
-  //   // ()=>newUpdate.song.play()
-  // }
-
   return (
     <div className="swiper__container">
       <h2>Popular in your area</h2>
@@ -34,18 +24,19 @@ const Popular = (props) => {
         }}
       >
         {update.map((newUpdate) => {
-       
-          
-       newUpdate.song = new Audio(newUpdate.url)
+         
           return (
-            <SwiperSlide className="slider__item" key={newUpdate.id} onClick={()=>newUpdate.song.play}>
+            <SwiperSlide
+              className="slider__item"
+              key={newUpdate.id}
              
+
+            >
               <img src={newUpdate.img} alt="" />
               <p className="swiper__title">{newUpdate.title} </p>
             </SwiperSlide>
           );
         })}
-
       </Swiper>
     </div>
   );

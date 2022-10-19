@@ -10,7 +10,7 @@ import "swiper/css";
 const Newrelease = (props) => {
   // console.log(props.released.id)
   const update = props.released;
-  console.log(update)
+ 
 
   return (
     <div className="swiper__container">
@@ -27,7 +27,7 @@ const Newrelease = (props) => {
       >
         {update.map((newUpdate) => {
            const song = new Audio(newUpdate.url)
-           console.log(song)
+        
           return (
             <SwiperSlide className="slider__item" key={newUpdate.id} onClick={song.play}>
              
