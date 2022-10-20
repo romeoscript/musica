@@ -25,20 +25,22 @@ const Home = () => {
       .then((response) => response.json())
 
       .then((data) => {
-        console.log(data);
-        const transformedMovies = data.map((audioData) => {
-          console.log(audioData.images.background);
-          return {
-            id: audioData.key,
-            title: audioData.title,
-            sub: audioData.subtitle,
-            // image:audioData.images.coverart,
-            // img:audioData.images.coverart,
-            //  url:audioData.hub.actions[1].uri,
-          };
+        const transformedMovies = [];
+        data.forEach(audioData => {
+               if(!audioData.images) return null
+           
+            transformedMovies.push({
+              id: audioData.key,
+              title: audioData.title,
+              sub: audioData.subtitle,
+              image:audioData.images.coverart,
+              img:audioData.images.background,
+              url:audioData.hub.actions[1].uri,
+
+            }) 
         });
-        setNewRelease(transformedMovies);
-        console.log(transformedMovies);
+        setNewRelease(transformedMovies)
+        console.log(transformedMovies[0])
       })
       .catch((err) => console.error(err));
   }

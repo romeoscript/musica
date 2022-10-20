@@ -29,8 +29,6 @@ const Popular = (props) => {
             <SwiperSlide
               className="slider__item"
               key={newUpdate.id}
-             
-
             >
               <img src={newUpdate.img} alt="" />
               <p className="swiper__title">{newUpdate.title} </p>
