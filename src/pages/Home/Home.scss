@@ -9,7 +9,15 @@
   display: flex;
   gap: 2%;
   height: 373px;
-  margin: 1rem;
+  margin: 0 1rem;
+  @media (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+
+    height: 100vh;
+    margin: 0 1rem;
+  }
 
   // shared container flex item
   .shared__container-flex__item {
@@ -21,7 +29,9 @@
     background: #609eaf url("../../assets/Vector.svg") no-repeat right;
     border-radius: 40px;
     overflow: hidden;
-
+    @media (max-width: 550px) {
+      height: 505px;
+    }
     // shared container
 
     .shared__container-flex__text {
@@ -31,6 +41,9 @@
       height: 100%;
       padding: 1rem;
       width: 49%;
+      @media (max-width:550px) {
+         width: 100%;
+      }
       h1 {
         /* Bold/35px */
         font-family: "Quicksand";
@@ -38,8 +51,7 @@
         font-weight: 700;
         font-size: 35px;
         line-height: 120%;
-        color: #FFFFFF;
-
+        color: #ffffff;
       }
       // shared container text
       p {
@@ -55,7 +67,9 @@
       .shared__container-people-image {
         display: flex;
         // justify-content: space-around;
+        
         align-items: center;
+        
       }
       .ptag {
         margin: 10px;
@@ -73,6 +87,9 @@
       position: absolute;
       top: 1%;
       right: 0;
+      @media (max-width:550px) {
+         display: none;
+      }
     }
   }
 }

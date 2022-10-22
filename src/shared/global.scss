@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
-.shared__container{
- width: calc(100% - 100px) !important;;
- height: 100%;
- margin-top: 1.4rem;
-margin-left: 100px;
+.shared__container {
+  width: calc(100% - 100px) !important;
+  height: 100%;
+  margin-left: 100px;
 }
-a{
-    text-decoration: unset;
+a {
+  text-decoration: unset;
+}
+@media( max-width:550px) {
+    .shared__container{
+        width: 100%!important;
+        margin-left: 0;
+    }
 }

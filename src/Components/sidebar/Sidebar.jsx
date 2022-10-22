@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./sidebar.scss";
-import { SearchNormal1 } from "iconsax-react";
-import { logo } from "../../assets";
+
 import {
   MusicLibrary2,
   VideoVertical,
@@ -33,24 +32,7 @@ const Sidebar = () => {
   // end of the state
   return (
     <div className="sidebar__container">
-      {/* logo  */}
-      <div className="sidebar__logo">
-        <img src={logo} alt="" />
-      </div>
-      <div className="input__container">
-        <input
-          type="search"
-          placeholder="search artiste"
-          value={search}
-          onChange={handleSearch}
-        />
-        <SearchNormal1
-          size="15"
-          color="#dce775"
-          variant="Outline"
-          className="searchicon"
-        />
-      </div>
+     
       {/* the navigation pane and routes */}
       <div className="sidebar__btn">
         <SidebarButton to="/" icons={<Home2 size="20" variant="Bold" />} />

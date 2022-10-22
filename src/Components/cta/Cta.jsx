@@ -23,7 +23,7 @@ const Cta = () => {
         </div>
       </div>
       <div className="cta__container-audio">
-        <audio src=""></audio>
+        
         <div className="controls">
           <Shuffle size="20" className="controls__btn" variant="Bold" />
           <Previous size="20" className="controls__btn" variant="Bold" />
