@@ -3,6 +3,7 @@ import React,{useContext} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import { MusicContext } from "../../context/Context";
+import { Link } from "react-router-dom";
 
 import "./newrelease.scss";
 // Import Swiper styles
@@ -16,6 +17,7 @@ const Newrelease = () => {
   return (
     <div className="swiper__container">
       <h2>New Releases.</h2>
+      
       <Swiper
         modules={[Autoplay]}
         spaceBetween={50}
@@ -29,11 +31,14 @@ const Newrelease = () => {
         {newRelease.map((newUpdate) => {
         
           return (
+            
             <SwiperSlide className="slider__item" key={newUpdate.id} >
-             
+             <Link to={`/player/${newUpdate.id}`}>
               <img src={newUpdate.image} alt="" />
               <p className="swiper__title">{newUpdate.title} </p>
+              </Link>
             </SwiperSlide>
+          
           );
         })}
 

@@ -2,6 +2,7 @@ import React,{useContext} from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
+import { Link } from "react-router-dom";
 
 import "./newrelease.scss";
 // Import Swiper styles
@@ -31,8 +32,10 @@ const Popular = () => {
               className="slider__item"
               key={newUpdate.id}
             >
+              <Link to={`/player/${newUpdate.id}`}>
               <img src={newUpdate.img} alt="" />
               <p className="swiper__title">{newUpdate.title} </p>
+              </Link>
             </SwiperSlide>
           );
         })}
