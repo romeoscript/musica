@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {  useEffect,useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./Home.scss";
 import HomePage from "./HomePage";
@@ -6,13 +6,12 @@ import Collections from "../Collections/Collections";
 import Player from "../player/Player";
 import Trending from "../trending/Trending";
 import Sidebar from "../../Components/sidebar/Sidebar";
-
 import Cta from "../../Components/cta/Cta";
 import Navbar from "../../Components/navbar/Navbar";
+import { MusicContext } from "../../context/Context";
 
 const Home = () => {
-  const [newRelease, setNewRelease] = useState([]);
-  
+  const  {newRelease,setNewRelease} = useContext(MusicContext)
 
   function fetchAudio() {
     const options = {
@@ -57,7 +56,7 @@ const Home = () => {
       
         <Sidebar />
         <Routes>
-          <Route path="/" element={<HomePage released={newRelease} />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/collections" element={<Collections />} />
           <Route
             path="/player/:musicId"

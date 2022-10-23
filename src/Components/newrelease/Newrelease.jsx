@@ -1,15 +1,16 @@
-import React from "react";
+import React,{useContext} from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
+import { MusicContext } from "../../context/Context";
 
 import "./newrelease.scss";
 // Import Swiper styles
 import "swiper/css";
 
-const Newrelease = (props) => {
+const Newrelease = () => {
   // console.log(props.released.id)
-  const update = props.released;
+ const {newRelease} = useContext(MusicContext)
  
 
   return (
@@ -25,7 +26,7 @@ const Newrelease = (props) => {
           disableOnInteraction: false,
         }}
       >
-        {update.map((newUpdate) => {
+        {newRelease.map((newUpdate) => {
         
           return (
             <SwiperSlide className="slider__item" key={newUpdate.id} >

@@ -1,11 +1,13 @@
-
-import './App.css';
+import "./App.css";
 import Home from "./pages/Home/Home";
+import Context from "./context/Context";
 
 function App() {
   return (
     <div className="App">
-      <Home/>
+      <Context>
+        <Home />
+      </Context>
     </div>
   );
 }

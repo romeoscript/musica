@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useContext} from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
@@ -6,10 +6,11 @@ import { Autoplay } from "swiper";
 import "./newrelease.scss";
 // Import Swiper styles
 import "swiper/css";
+import { MusicContext } from "../../context/Context";
 
-const Popular = (props) => {
+const Popular = () => {
   // console.log(props.released.id)
-  const update = props.released;
+  const {newRelease} = useContext(MusicContext)
   return (
     <div className="swiper__container">
       <h2>Popular in your area</h2>
@@ -23,7 +24,7 @@ const Popular = (props) => {
           disableOnInteraction: false,
         }}
       >
-        {update.map((newUpdate) => {
+        {newRelease.map((newUpdate) => {
          
           return (
             <SwiperSlide

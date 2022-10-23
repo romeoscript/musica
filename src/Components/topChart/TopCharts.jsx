@@ -1,10 +1,11 @@
-import React from "react";
+import React,{useContext}from "react";
 import "./topchart.scss";
 import { Link } from "react-router-dom";
 import { Heart } from "iconsax-react";
+import { MusicContext } from "../../context/Context";
 
-const TopCharts = (props) => {
-  const topChart = props.released;
+const TopCharts = () => {
+  const {newRelease} = useContext(MusicContext)
 
   return (
     <div className="top__chart-flex">
@@ -14,7 +15,7 @@ const TopCharts = (props) => {
         {/* this information would be fetched from an api */}
 
         {/* flex__item1 */}
-        {topChart.map((updated) => {
+        {newRelease.map((updated) => {
           return (
             <div className="top__chart-flex__top" key={updated.id}>
               <Link to={`/player/${updated.id}`}>

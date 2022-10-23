@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 import Newrelease from "../../Components/newrelease/Newrelease";
 import Popular from "../../Components/newrelease/Popular";
 
+
+
 const HomePage = ({released}) => {
+
 
   return (
     <div className="shared__container">
@@ -44,10 +47,10 @@ const HomePage = ({released}) => {
             alt="humanbg"
           />
         </div>
-        <TopCharts released={released} />
+        <TopCharts />
       </div>
-      <Newrelease released={released}/>
-      <Popular released={released}/>
+      <Newrelease/>
+      <Popular/>
     </div>
   );
 };
