@@ -12,3 +12,6 @@ html{
 body{
     background: #1D2123;
 }
+.App{
+    overflow-x: hidden;
+}
