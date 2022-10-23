@@ -23,9 +23,17 @@
   margin: 3rem 1rem;
   align-items: flex-end;
   z-index: 2;
+  @media (max-width:550px) {
+   
+    height: auto;
+    flex-direction: column;
+  }
   .music__tunes-text {
     width: 40%;
     padding: 0 1rem;
+    @media (max-width:550px) {
+      width: 100%;
+    }
   }
   p {
     font-family: "Quicksand";
