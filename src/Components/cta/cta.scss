@@ -19,9 +19,9 @@
   display: flex;
   align-items: center;
   color: white;
-  @media(max-width:550px){
-    flex-direction: column;
-  }
+  // @media(max-width:550px){
+  //   flex-direction: column;
+  // }
 }
 .cta__container-image img {
   width: 49px;
@@ -50,6 +50,11 @@
   color: white;
   cursor: pointer;
 }
+.midscreen{
+  @media (max-width:550px) {
+    display: none;
+  }
+}
 .controls__btn.play {
   color: #facd66;
   background: #fff;
@@ -64,6 +69,9 @@
   -webkit-appearance: none;
   background-color: #FACD66!important;
   height: 4px;
+  @media(max-width:550px){
+    display: none;
+  }
 }
 .cta__container-audio input[type="range"]::-webkit-slider-thumb{
  width: 15px;

@@ -25,11 +25,11 @@ const Cta = () => {
       <div className="cta__container-audio">
         
         <div className="controls">
-          <Shuffle size="20" className="controls__btn" variant="Bold" />
-          <Previous size="20" className="controls__btn" variant="Bold" />
+          <Shuffle size="20" className="controls__btn midscreen" variant="Bold" />
+          <Previous size="20" className="controls__btn midscreen" variant="Bold" />
           <PlayCircle size="27" className="controls__btn play" variant="Bold" />
           <Next size="20" className="controls__btn" variant="Bold" />
-          <RepeateOne size="20" className="controls__btn" variant="Bold" />
+          <RepeateOne size="20" className="controls__btn midscreen" variant="Bold" />
         </div>
         <input type="range" name="" id="" />
       </div>
