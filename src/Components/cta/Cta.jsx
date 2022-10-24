@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Rectangle14 } from "../../assets";
 import {
   VolumeMute,
@@ -10,44 +10,56 @@ import {
 } from "iconsax-react";
 //  import ReactPlayer from "react-player";
 // import AudioPlayer from "react-h5-audio-player";
+
+import { MusicContext } from "../../context/Context";
+import AudioPlayer from "react-h5-audio-player";
+
+import "react-h5-audio-player/lib/styles.css";
 import "./cta.scss";
 
 const Cta = () => {
+  const { audioQueue, trackIndex, setTrackIndex } = useContext(MusicContext);
+
+  const handleClickPrevious = () => {
+    setTrackIndex((currentTrack) =>
+      currentTrack === 0 ? audioTracks.length - 1 : currentTrack - 1
+    );
+  };
+
+  const handleClickNext = () => {
+    setTrackIndex((currentTrack) =>
+      currentTrack < audioTracks.length - 1 ? currentTrack + 1 : 0
+    );
+  };
+
+  if (audioQueue.length === 0) return null;
+
+  console.log(audioQueue)
+
+  const audioTracks = audioQueue;
+  const currentTrack = audioTracks[trackIndex];
+
   return (
-    <div className="cta__container">
-      <div className="cta__container-image">
-        <img src={Rectangle14} alt="" />
+    <section className="audio-container">
+      <div className="audio-details">
+        <img src={currentTrack.img} alt="" />
         <div>
-          <h4>Seasons in</h4>
-          <p>James</p>
+          <h3>{currentTrack.title}</h3>
+          <p>{currentTrack.sub}</p>
         </div>
       </div>
-      <div className="cta__container-audio">
-        
-        <div className="controls">
-          <Shuffle size="20" className="controls__btn midscreen" variant="Bold" />
-          <Previous size="20" className="controls__btn midscreen" variant="Bold" />
-          <PlayCircle size="27" className="controls__btn play" variant="Bold" />
-          <Next size="20" className="controls__btn" variant="Bold" />
-          <RepeateOne size="20" className="controls__btn midscreen" variant="Bold" />
-        </div>
-        <input type="range" name="" id="" />
-      </div>
-      <div className="cta__container-volume">
-        <VolumeMute size="20" color="#fff" />
-        <input type="range" name="" id="" />
-      </div>
-      {/* <AudioPlayer
-        src='romeo.mp3'
-        // showSkipControls
-        // showJumpControls={false}
-        // autoPlay
-        // onClickPrevious={handleClickPrevious}
-        // onClickNext={handleClickNext}
-        // onEnded={handleClickNext}
+
+      <AudioPlayer
+        src={currentTrack.url}
+        showSkipControls
+        showJumpControls={false}
+        autoPlay
+        onClickPrevious={handleClickPrevious}
+        onClickNext={handleClickNext}
+        onEnded={handleClickNext}
         className="player"
-      ></AudioPlayer> */}
-    </div>
+      ></AudioPlayer>
+    </section>
   );
 };
 
