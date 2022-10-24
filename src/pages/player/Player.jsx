@@ -1,11 +1,14 @@
 import { PlayCircle, MusicSquareAdd, Heart } from "iconsax-react";
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { MusicContext } from "../../context/Context";
 import "./Player.scss";
 import PlayerAlbum from "./PlayerAlbum";
 
-const Player = (props) => {
-  const topChart = props.released;
+const Player = () => {
+  const { newRelease, setAudioQueue } = useContext(MusicContext);
+  console.log(newRelease);
+  const topChart = newRelease;
   const params = useParams();
   const topPlayed = topChart.find((played) => {
     return played.id === params.musicId;
@@ -32,11 +35,14 @@ const Player = (props) => {
             <p>64 songs ~ 16 hrs+</p>
           </section>
           <section className="music__tunes-play__section">
-            <div className="play">
+            <button
+              onClick={(e) => setAudioQueue((state) => [...state, topPlayed])}
+              className="play"
+            >
               {" "}
               <PlayCircle size="20" color="#FACD66" variant="Bold" />{" "}
               <p>Play all</p>
-            </div>
+            </button>
             <div className="add__collection">
               <MusicSquareAdd size="20" color="#FACD66" variant="Bold" />
               <p>Add to collection</p>
@@ -51,7 +57,6 @@ const Player = (props) => {
       <PlayerAlbum />
       {url}
 
-     
       {params.musicId}
     </div>
   );
