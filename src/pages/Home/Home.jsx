@@ -22,7 +22,7 @@ const Home = () => {
           <Route path="/player/:musicId" element={<Player />} />
           <Route path="/trending" element={<Trending />} />
         </Routes>
-        <audio src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/3c/2c/82/3c2c8235-9907-0405-b21c-8fd66d285e56/mzaf_6122099414111658029.plus.aac.ep.m4a"></audio>
+        {/* <audio src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/3c/2c/82/3c2c8235-9907-0405-b21c-8fd66d285e56/mzaf_6122099414111658029.plus.aac.ep.m4a"></audio> */}
         <Cta />
       </div>
     </BrowserRouter>

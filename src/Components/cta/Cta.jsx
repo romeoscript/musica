@@ -42,7 +42,7 @@ const Cta = () => {
   return (
     <section className="audio-container">
       <div className="audio-details">
-        <img src={currentTrack.img} alt="" />
+        {/* <img src={currentTrack.img} alt="" /> */}
         <div>
           <h3>{currentTrack.title}</h3>
           <p>{currentTrack.sub}</p>

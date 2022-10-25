@@ -16,6 +16,10 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(true);
+  const handlecollapse = () => {
+    setToggle(true);
+    console.log('true')
+  };
   return (
     <>
       <div className="navbar">
@@ -44,29 +48,33 @@ const Navbar = () => {
         {!toggle && (
           <div className="sidebar__container nav__container">
             {/* the navigation pane and routes */}
-            
-              <SidebarButton
-                to="/"
-                icons={<Home2 size="20" variant="Bold" />}
-              />
-              <SidebarButton
-                to="/collections"
-                icons={<MusicLibrary2 size="20" variant="Bold" />}
-              />
-              <SidebarButton icons={<Radio size="20" variant="Bold" />} />
-              <SidebarButton
-                to="/trending"
-                icons={<VideoVertical size="20" variant="Bold" />}
-              />
-              <SidebarButton
-                to="/."
-                icons={<Profile size="20" variant="Bold" />}
-              />
-              <SidebarButton
-                to="/."
-                icons={<LogoutCurve size="20" variant="Bold" />}
-              />
-            
+
+            <SidebarButton
+              to="/"
+              icons={<Home2 size="20" variant="Bold" />}
+              onClick={handlecollapse}
+            />
+            <SidebarButton
+              to="/collections"
+              icons={<MusicLibrary2 size="20" variant="Bold" />}
+              onClick={handlecollapse}
+            />
+            <SidebarButton icons={<Radio size="20" variant="Bold" />} />
+            <SidebarButton
+              to="/trending"
+              icons={<VideoVertical size="20" variant="Bold" />}
+              onClick={handlecollapse}
+            />
+            <SidebarButton
+              to="/."
+              icons={<Profile size="20" variant="Bold" />}
+              onClick={handlecollapse}
+            />
+            <SidebarButton
+              to="/."
+              icons={<LogoutCurve size="20" variant="Bold" />}
+              onClick={handlecollapse}
+            />
           </div>
         )}
       </div>

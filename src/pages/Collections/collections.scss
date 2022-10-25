@@ -26,3 +26,8 @@
     }
   }
 }
+.mycollections__items{
+  @media (max-width:550px) {
+    padding: 1rem;
+  }
+}
