@@ -1,17 +1,16 @@
 import React from "react";
-import { Rectangle16 } from "../../assets";
 import { Heart, More } from "iconsax-react";
 
-const PlayerAlbum = () => {
+const PlayerAlbum = (props) => {
   return (
     <section className="player__album-section">
       <div className="player__album">
         <div className="player__album-second">
           <span className="album__dp">
-            <img src={Rectangle16} alt="" />
+            <img src={props.image} alt="" />
             <Heart size="20" color="white" variant="transparent" />
           </span>
-          <p>Let me love you ~ Krisx</p>
+          <p>{props.title} ~ {props.sub}</p>
           <p>Single</p>
 
           <p>4:17</p>

@@ -120,7 +120,10 @@
   align-items: center;
   gap: 4%;
   justify-content: space-between;
-  
+  img{
+    width: 49px;
+    border-radius: 10px;
+  }
   h3 {
     font-family: "Quicksand";
     font-style: normal;
@@ -143,20 +146,25 @@
 
     color: rgba(255, 255, 255, 0.44);
   }
-  .rhap_container {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-    font-family: inherit;
-    width: 100%;
-    padding: 10px 15px;
-    background-color: #fff;
-    box-shadow: 0 0 3px 0 rgb(0 0 0 / 20%);
-    background: transparent!important;
+ 
 }
+.rhap_container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  font-family: inherit;
+  width: 70%;
+  padding: 10px 15px;
+  background-color: #fff;
+  box-shadow: 0 0 3px 0 rgb(0 0 0 / 20%);
+  background: transparent!important;
 }
-
+.rhap_play-pause-button * {
+  border-radius: 9999px;
+  --tw-text-opacity: 1;
+  color: rgb(250 205 102 / var(--tw-text-opacity))!important;
+}
 // .audio-details img {
 //   // @apply rounded-xl w-14;
 // }

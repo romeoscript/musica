@@ -13,8 +13,8 @@ const Player = () => {
   const topPlayed = topChart.find((played) => {
     return played.id === params.musicId;
   });
-  const { url, title, image } = topPlayed;
-  console.log(topPlayed);
+  const { url, title, image,sub } = topPlayed;
+
   return (
     <div className="shared__container player__container">
       <div className="player__image-container">
@@ -29,8 +29,9 @@ const Player = () => {
           <section className="music__select">
             <h2> {title}</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-              aliquam, purus sit amet luctus venenatis
+              {sub}
+              {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
+              aliquam, purus sit amet luctus venenatis */}
             </p>
             <p>64 songs ~ 16 hrs+</p>
           </section>
@@ -54,7 +55,7 @@ const Player = () => {
         </div>
       </div>
       {/* music tunes ends here */}
-      <PlayerAlbum />
+      <PlayerAlbum image={image} title={title} sub={sub}/>
       {url}
 
       {params.musicId}
