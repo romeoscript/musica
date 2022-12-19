@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap");
+
+@tailwind base;
+
+@layer base {
+  #root {
+    @apply bg-cover bg-fixed;
+  }
+  section {
+    @apply mb-10;
+  }
+
+  h1 {
+    @apply font-bold text-4xl py-1.5;
+  }
+  h2 {
+    @apply font-bold text-2xl py-1;
+  }
+  p,a {
+    @apply text-sm;
+  }
+}

@@ -1,0 +1,220 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .body {
+    @apply min-h-screen p-5 font-quicksand text-white;
+  }
+
+  .noBg {
+    @apply bg-dark;
+  }
+
+  .withBg {
+    @apply bg-gradient-to-b from-[#1d2123e1] via-[#1d2123f1] to-[#1D2123] bg-fixed;
+  }
+
+  .app {
+    @apply max-w-[2000px] mx-auto;
+  }
+
+  header {
+    @apply flex gap-8 items-center relative;
+  }
+
+  .main {
+    @apply md:pl-16 w-full gap-8 my-6 lg:pr-6 pb-16;
+  }
+
+  .menu {
+    @apply fixed hidden z-30 w-screen left-0 top-16 md:pt-24 min-h-screen bg-dark md:bg-transparent md:w-max  md:left-5;
+  }
+
+  .menu.nav-active {
+    @apply block;
+  }
+
+  .nav {
+    @apply md:bg-dark-alt md:w-max py-4 md:mb-4 md:rounded-full md:grid;
+  }
+
+  .mobile-btn {
+    @apply md:hidden h-max;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-7 md:gap-4 mx-10 md:mx-0;
+  }
+
+  .nav-link span {
+    @apply md:hidden;
+  }
+
+  .active .nav-icon {
+    @apply hidden;
+  }
+
+  .nav-icon-a {
+    @apply hidden;
+  }
+
+  .active .nav-icon-a {
+    @apply block;
+  }
+
+  .home {
+    @apply w-full;
+  }
+
+  .top-section {
+    @apply lg:flex gap-4 lg:h-96;
+  }
+
+  .hero {
+    @apply rounded-4xl w-full h-96 bg-hero p-8 md:px-11 relative overflow-hidden;
+  }
+
+  .grain {
+    @apply absolute -top-40 -right-40 md:top-0 md:right-0 rotate-90 md:rotate-0 md:h-full;
+  }
+
+  .cover {
+    @apply hidden md:block absolute h-full bottom-0 right-4 lg:right-0;
+  }
+
+  .content {
+    @apply grid place-content-between h-full;
+  }
+
+  .hero .content {
+    @apply md:w-1/2;
+  }
+
+  .details {
+    @apply mt-20 md:mt-8;
+  }
+
+  .chart-section {
+    @apply lg:w-[500px] h-full overflow-hidden;
+  }
+
+  .chart-main {
+    @apply flex lg:flex-col w-max lg:w-auto gap-8 lg:gap-4 py-4;
+  }
+
+  .chart {
+    @apply bg-dark-alt rounded-2xl p-4 flex justify-between w-80 lg:w-full;
+  }
+
+  .chart .content {
+    @apply lg:grid-flow-col lg:place-content-start w-full gap-4;
+  }
+
+  .chart-icon {
+    @apply w-28 lg:w-16 lg:h-full rounded-lg;
+  }
+
+  .details {
+    @apply mt-0;
+  }
+
+  .like-icon {
+    @apply w-max h-max lg:m-auto;
+  }
+
+  .albums-section {
+    @apply overflow-hidden;
+  }
+  .lists {
+    @apply grid grid-flow-col w-max gap-[30px] py-4;
+  }
+
+  .album-card {
+    @apply w-[153px] overflow-hidden;
+  }
+
+  .album-card img {
+    @apply w-full rounded-3xl;
+  }
+
+  .detail-top-sect {
+    @apply lg:flex items-end gap-7;
+  }
+
+  .detail-img {
+    @apply w-[300px] rounded-4xl;
+  }
+
+  .detail-options {
+    @apply flex gap-2 mb-3 mt-6 md:mt-10 text-sm;
+  }
+
+  .btn {
+    @apply rounded-full px-3.5 py-3 gap-3 flex items-center bg-[#FFFFFF12] backdrop-blur-sm 
+    hover:backdrop-blur-xl hover:text-primary;
+  }
+
+  .track-card {
+    @apply flex justify-between gap-10 items-center bg-[#33373B5E] backdrop-blur-sm rounded-2xl  sm:rounded-4xl py-2 px-4 my-3;
+  }
+
+  .track-cover {
+    @apply w-14 rounded-lg;
+  }
+
+  .track-info {
+    @apply grid grid-cols-2 grid-rows-2 md:grid-cols-3 md:grid-rows-1  w-full relative items-center;
+  }
+
+  .info3 {
+    @apply text-center;
+  }
+
+  .info4 {
+    @apply absolute right-0 top-1/2 -translate-y-1/2;
+  }
+
+  .search-box {
+    @apply flex gap-4 w-full;
+  }
+
+  .search-bar {
+    @apply bg-transparent focus-visible:outline-none focus-visible:border-primary focus-visible:border-[1px] w-full p-2 rounded-md;
+  }
+
+  .search-result-container {
+    @apply absolute top-full z-50 p-2 px-8 bg-dark rounded-xl w-full left-0 mt-2;
+  }
+
+  .search-result-container .inner {
+    @apply grid gap-6 h-screen;
+  }
+
+  .search-results {
+    @apply flex gap-4 items-center bg-dark-alt p-2 rounded-xl;
+  }
+
+  .chart,
+  .album-card,
+  .btn {
+    @apply hover:scale-105 duration-100;
+  }
+}
+
+/* Custom Css */
+
+@media (max-width: 767px) {
+  .info1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .info2 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .info3 {
+    text-align: right;
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .info4 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+}
